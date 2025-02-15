@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 // Structure for hash table item
 typedef struct {
@@ -17,10 +18,11 @@ typedef struct {
     HashNode ** items;
 } HashTable;
 
-
-static HashNode * newItem(const char* k, const char * v);
-HashNode* newHashTable();
+char* stralloc(const char * str);
+static HashNode * newHashNode(const char* k, const char * v);
+HashTable* newHashTable();
 static void deleteHashNode(HashNode* toBeDeleted);
 void deleteHashTable(HashTable* toBeDeleted);
+char* stralloc(const char * str);
 
 #endif
